@@ -120,32 +120,32 @@ const Menu = () => {
               All
             </button>
             <button
-              onClick={() => filterItems("salad")}
-              className={selectedCategory === "salad" ? "active" : ""}
+              onClick={() => filterItems("Salad")}
+              className={selectedCategory === "Salad" ? "active" : ""}
             >
               Salad
             </button>
             <button
-              onClick={() => filterItems("pizza")}
-              className={selectedCategory === "pizza" ? "active" : ""}
+              onClick={() => filterItems("Pizza")}
+              className={selectedCategory === "Pizza" ? "active" : ""}
             >
               Pizza
             </button>
             <button
-              onClick={() => filterItems("soup")}
-              className={selectedCategory === "soup" ? "active" : ""}
+              onClick={() => filterItems("Soup")}
+              className={selectedCategory === "Soup" ? "active" : ""}
             >
               Soups
             </button>
             <button
-              onClick={() => filterItems("dessert")}
-              className={selectedCategory === "dessert" ? "active" : ""}
+              onClick={() => filterItems("Dessert")}
+              className={selectedCategory === "Dessert" ? "active" : ""}
             >
               Desserts
             </button>
             <button
-              onClick={() => filterItems("drinks")}
-              className={selectedCategory === "drinks" ? "active" : ""}
+              onClick={() => filterItems("Drinks")}
+              className={selectedCategory === "Drinks" ? "active" : ""}
             >
               Drinks
             </button>
@@ -173,9 +173,15 @@ const Menu = () => {
 
         {/* product card */}
         <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 ">
-          {currentItems.map((item) => (
+        {currentItems.length > 0 ? (
+          currentItems.map((item) => (
             <Cards key={item._id} item={item} />
-          ))}
+              ))
+            ) : (
+              <div className="col-span-full text-center text-xl font-semibold text-red">
+                No items available for this category at the moment
+              </div>
+        )}
         </div>
       </div>
 
